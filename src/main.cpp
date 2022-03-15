@@ -45,7 +45,7 @@ void loop() {
   }
   else {
     char bufferTemp[35];
-    snprintf(bufferTemp, 35, "Temperature: %.2fC", event.temperature);
+    snprintf(bufferTemp, 35, "Temperature: %.2f C", event.temperature);
     InkPageSprite.drawString(15,50,bufferTemp);
   }
   // Get humidity event and print its value.
@@ -55,7 +55,7 @@ void loop() {
   }
   else {
     char bufferHum[35];
-    snprintf(bufferHum, 35, "Humidity: %.2f", event.temperature);
+    snprintf(bufferHum, 35, "Humidity: %.2f %%", event.temperature);
     InkPageSprite.drawString(15,100,bufferHum);
   }
   InkPageSprite.pushSprite();
