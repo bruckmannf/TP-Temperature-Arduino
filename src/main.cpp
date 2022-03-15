@@ -41,12 +41,12 @@ void loop() {
   
   dht.temperature().getEvent(&event);
   if (isnan(event.temperature)) {
-    InkPageSprite.drawString(15,50,"Error reading temperature!");
+    InkPageSprite.drawString(20,50,"Error reading temperature!");
   }
   else {
     char bufferTemp[35];
     snprintf(bufferTemp, 35, "Temperature: %.2f C", event.temperature);
-    InkPageSprite.drawString(15,50,bufferTemp);
+    InkPageSprite.drawString(20,50,bufferTemp);
   }
   // Get humidity event and print its value.
   dht.humidity().getEvent(&event);
@@ -56,7 +56,7 @@ void loop() {
   else {
     char bufferHum[35];
     snprintf(bufferHum, 35, "Humidity: %.2f %%", event.temperature);
-    InkPageSprite.drawString(15,100,bufferHum);
+    InkPageSprite.drawString(30,100,bufferHum);
   }
   InkPageSprite.pushSprite();
   delay(5000);
