@@ -10,6 +10,7 @@ DHT_Unified dht(DHTPIN, DHTTYPE);
 
 Ink_Sprite InkPageSprite(&M5.M5Ink);
 sensors_event_t event;
+String oui = "%";
 
 //Initialisation
 void setup() {
@@ -44,7 +45,7 @@ void loop() {
   }
   else {
     char bufferTemp[35];
-    snprintf(bufferTemp, 35, "Temperature: %f °C", event.temperature);
+    snprintf(bufferTemp, 35, "Temperature: %.2fC", event.temperature);
     InkPageSprite.drawString(15,50,bufferTemp);
   }
   // Get humidity event and print its value.
@@ -54,7 +55,7 @@ void loop() {
   }
   else {
     char bufferHum[35];
-    snprintf(bufferHum, 35, "Humidity: %f %", event.temperature);
+    snprintf(bufferHum, 35, "Humidity: %.2f", event.temperature);
     InkPageSprite.drawString(15,100,bufferHum);
   }
   InkPageSprite.pushSprite();
